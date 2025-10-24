@@ -1,0 +1,250 @@
+body.dark-mode {
+    background: linear-gradient(135deg, #181c2f 0%, #232946 100%);
+    color: #f4f4f4;
+    font-family: 'Poppins', 'Inter', 'Roboto', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(24,28,47,0.95);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 16px 0 #0ff1ce33;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0ff1ce;
+    text-shadow: 0 0 8px #0ff1ce99;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+.navbar ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.navbar ul li a:hover {
+    color: #0ff1ce;
+    text-shadow: 0 0 8px #0ff1ce99;
+}
+.banner {
+    background: linear-gradient(90deg, #0ff1ce 0%, #232946 100%);
+    padding: 3rem 2rem 2rem 2rem;
+    text-align: center;
+    border-radius: 0 0 32px 32px;
+    box-shadow: 0 8px 32px 0 #0ff1ce33;
+    margin-bottom: 2rem;
+    animation: bannerGlow 3s infinite alternate;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+    grid-column: 1 / -1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+    order: 9999; /* Ensures it appears at the end of the grid */
+    margin-top: 1em;
+}
+
+.loading-spinner.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #0ff1ce33;
+    border-radius: 50%;
+    border-top-color: #0ff1ce;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 1em;
+}
+
+.loading-text {
+    color: #0ff1ce;
+    font-size: 1.1em;
+    text-shadow: 0 0 10px #0ff1ce44;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+@keyframes bannerGlow {
+    from { box-shadow: 0 8px 32px 0 #0ff1ce33; }
+    to { box-shadow: 0 8px 64px 0 #0ff1ce99; }
+}
+.ticker {
+    background: #0ff1ce;
+    color: #232946;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 0 0 16px 16px;
+    margin-bottom: 2rem;
+    animation: tickerSlide 20s linear infinite;
+}
+/* Removed ticker background sliding animation */
+#news-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+.news-card {
+    background: #232946;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 #0ff1ce22;
+    padding: 1.5rem;
+    width: 320px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    animation: cardFadeIn 0.7s cubic-bezier(.4,2,.6,1) forwards;
+}
+.news-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px 0 #0ff1ce55;
+}
+.animated-card {
+    animation: cardFadeIn 0.7s cubic-bezier(.4,2,.6,1) forwards;
+}
+@keyframes cardFadeIn {
+    0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.news-card .date {
+    font-size: 0.9rem;
+    color: #0ff1ce;
+    margin-bottom: 0.5rem;
+}
+.news-card .tags {
+    font-size: 0.85rem;
+    color: #f4f4f4;
+    background: #0ff1ce33;
+    border-radius: 8px;
+    padding: 0.2rem 0.7rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+.news-card .summary {
+    font-size: 1.05rem;
+    color: #f4f4f4;
+}
+.news-card .read-more {
+    color: #0ff1ce;
+    text-decoration: underline;
+    font-weight: 600;
+    align-self: flex-end;
+    transition: color 0.2s;
+}
+.news-card .read-more:hover {
+    color: #fff;
+}
+.job-search {
+    background: #232946;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 #0ff1ce22;
+    padding: 2rem;
+    max-width: 480px;
+    margin: 2rem auto;
+    text-align: center;
+}
+.job-search label {
+    display: block;
+    margin: 1rem 0 0.5rem 0;
+    color: #0ff1ce;
+    font-weight: 600;
+}
+.job-search input, .job-search select {
+    width: 80%;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background: #181c2f;
+    color: #f4f4f4;
+    box-shadow: 0 2px 8px 0 #0ff1ce11;
+}
+.animated-btn {
+    background: linear-gradient(90deg, #0ff1ce 0%, #232946 100%);
+    color: #232946;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 16px 0 #0ff1ce33;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin-top: 1rem;
+}
+.animated-btn:hover {
+    background: #0ff1ce;
+    color: #232946;
+    box-shadow: 0 4px 32px 0 #0ff1ce99;
+}
+#job-links {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#job-links a {
+    background: #0ff1ce;
+    color: #232946;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 16px 0 #0ff1ce33;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+#job-links a:hover {
+    background: #232946;
+    color: #0ff1ce;
+    box-shadow: 0 4px 32px 0 #0ff1ce99;
+}
+.about {
+    background: #232946;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 #0ff1ce22;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 2rem auto;
+    color: #f4f4f4;
+}
+@media (max-width: 700px) {
+    .navbar, .banner, .about, .job-search, #news-cards {
+        padding: 1rem;
+    }
+    .news-card {
+        width: 95vw;
+    }
+}

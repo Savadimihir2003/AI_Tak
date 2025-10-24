@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tak Jobs</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="/static/main.js"></script>
+</head>
+<body class="dark-mode">
+    <nav class="navbar sticky">
+        <div class="logo">AI Tak</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/jobs">Jobs</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="job-search">
+            <h2>Find AI Jobs</h2>
+            <form id="job-form" method="post">
+                <label for="domain">Domain:</label>
+                <input type="text" id="domain" name="domain" placeholder="e.g. AI, Data Analyst" required>
+                <label for="location">Location:</label>
+                <select id="location" name="location" required>
+                    <option value="India">India</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                </select>
+                <button type="submit" class="animated-btn">Search</button>
+            </form>
+            <div id="job-links"></div>
+        </section>
+    </main>
+</body>
+</html>
